@@ -1,0 +1,29 @@
+plugins {
+    id 'java-library'
+}
+
+group 'org.example'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation group: 'org.seleniumhq.selenium', name: 'selenium-java', version: '3.141.59'
+    implementation group: 'org.jcodec', name: 'jcodec-javase', version: '0.2.5'
+    implementation group: 'org.jcodec', name: 'jcodec', version: '0.2.5'
+    api group: 'io.github.sudharsan-selvaraj', name: 'spydriver', version: '1.1.1'
+
+    testImplementation group: 'io.github.bonigarcia', name: 'webdrivermanager', version: '4.4.3'
+    testImplementation group: 'io.github.sudharsan-selvaraj', name: 'selenium-auto-wait', version: '1.0.2'
+
+    compileOnly 'org.projectlombok:lombok:1.18.20'
+    annotationProcessor 'org.projectlombok:lombok:1.18.20'
+    testCompileOnly 'org.projectlombok:lombok:1.18.20'
+    testAnnotationProcessor 'org.projectlombok:lombok:1.18.20'
+}
+
+test {
+    useJUnitPlatform()
+}
